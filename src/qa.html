@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>LFA GPA Calculator</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    .topnav {
+    overflow: hidden;
+    background-color: #060c31;
+    text-align: center;
+  }
+
+  .topnav a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px; /* Adjust padding as needed */
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Raleway", serif;
+    border-radius: 10px; /* Adjust border radius as needed */
+    background-color: #024fd4;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #fff;
+    color: #060c31;
+  }
+
+  h1{font-family: "Raleway", serif;}
+    
+
+    body {
+        background-color: #FEF1E4
+
+        /* background-size: cover; */
+    }
+    
+      
+</style>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="home.html" id="homeLink" >Home</a>
+        <a href="calculator.html" id="calculatorLink">Calculator</a>
+        <a href="qa.html" id="qaLink"  class="active">QA</a>
+
+      </div>
+
+<style> p{text-align: center;} </style>
+
+<p style="font-family: Georgia">
+<font size="7">
+You can find commonly asked questions and their answer here. Click on the questions that you are interested in to recieve a pop-up answer.
+</font>
+</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="font-family: Georgia">
+  <font size="4">
+    <button type="button" onclick="alert('A+ 4.33, A 4.0, A– 3.67, B+ 3.33, B 3.0, B– 2.67, C+ 2.33, C 2.0, C– 1.67, D+ 1.33, D 1.0, D– 0.67, F 0.0. AP and Advanced Classes do not receive a point boost.')">What is the grade system of LFA?</button>
+    <button type="button" onclick="alert('Lake Forest Academy(LFA) is a private prep school located in Lake Forest, IL. It also provides boarding and hosts a wide variety of international students.')">Where and what is LFA?</button>
+  </font>
+</p>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const homeLink = document.getElementById('homeLink');
+    const calculatorLink = document.getElementById('calculatorLink');
+    const qaLink = document.getElementById('qaLink');
+   
+    homeLink.addEventListener('click', function(event) {
+      calculatorLink.classList.remove('active');
+      qaLink.classList.remove('active');
+      
+    });
+
+    calculatorLink.addEventListener('click', function(event) {
+      homeLink.classList.remove('active');
+      qaLink.classList.remove('active');
+      
+    });
+
+    qaLink.addEventListener('click', function(event) {
+      homeLink.classList.remove('active');
+      calculatorLink.classList.remove('active');
+      
+    });
+
+  });
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LFA GPA Calculator</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FEF1E4;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .image-section, .calculator-section, .about-section {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    transition: height 0.5s ease;
+  }
+
+  .image-section {
+    background-image: url('CalcImage.jpg'); /* Replace 'CalcImage.jpg' with your image URL */
+  }
+
+  .button-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 20px; /* Adjust border radius as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button-container:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .calculator-section, .about-section {
+    background-color: #30a1da;
+    padding: 25px;
+    text-align: center;
+    display: none;
+  }
+
+  .show {
+    display: block !important;
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #060c31;
+    text-align: center;
+  }
+
+  .topnav a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px; /* Adjust padding as needed */
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Raleway", serif;
+    border-radius: 10px; /* Adjust border radius as needed */
+    background-color: #024fd4;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #fff;
+    color: #060c31;
+  }
+
+  h1{font-family: "Raleway", serif;}
+</style>
+</head>
+<body>
+  <div class="topnav">
+    <a href="home.html" id="homeLink" class="active">Home</a>
+    <a href="calculator.html" id="calculatorLink">Calculator</a>
+    <a href="qa.html" id="qaLink">QA</a>
+  </div>
+
+<div class="container">
+  <div class="image-section">
+    <div class="button-container" onclick="slideDown()">
+      <h1>Welcome to the Lake Forest Academy(LFA) GPA Calculator</h1>
+    </div>
+  </div>
+  <div class="calculator-section">
+    <h2>Information about the Calculator</h2>
+    <button onclick="slideToAbout()">About Section</button>
+    <p>On the calculator page there are two calculators which use the LFA GPA system and the unweighted system respectively. It is cumulative and you can add semester and courses however you want. You can also remove courses. Just enter your letter grade for each course and its name.</p> <!-- Put your calculator section text here -->
+  </div>
+  <div class="about-section">
+    <h2>About Us</h2>
+    <button onclick="slideToCalculator()">Calculator Section</button>
+    <p>This calculator was made by Haricharan Yarlagadda and David Nguyen. It uses HTML, CSS, and Javascript. THis calculator was made for the FBLA Intro to Programming Event 2024. If you have any trouble using it or want a new feature shoot a email to us at h.yarlagadda@students.lfanet.org or david.nguyen@students.lfanet.org.</p> <!-- Put your about section text here -->
+  </div>
+</div>
+
+<script>
+  function slideDown() {
+    var imageSection = document.querySelector('.image-section');
+    var calculatorSection = document.querySelector('.calculator-section');
+    
+    imageSection.style.height = '50vh';
+    calculatorSection.classList.add('show');
+  }
+  
+  function slideToAbout() {
+    var aboutSection = document.querySelector('.about-section');
+    var calculatorSection = document.querySelector('.calculator-section');
+    
+    calculatorSection.classList.remove('show');
+    aboutSection.classList.add('show');
+  }
+
+  function slideToCalculator() {
+    var aboutSection = document.querySelector('.about-section');
+    var calculatorSection = document.querySelector('.calculator-section');
+    
+    aboutSection.classList.remove('show');
+    calculatorSection.classList.add('show');
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const homeLink = document.getElementById('homeLink');
+    const calculatorLink = document.getElementById('calculatorLink');
+    const qaLink = document.getElementById('qaLink');
+   
+    homeLink.addEventListener('click', function(event) {
+      calculatorLink.classList.remove('active');
+      qaLink.classList.remove('active');
+      homeLink.classList.add('active');
+    });
+
+    calculatorLink.addEventListener('click', function(event) {
+      homeLink.classList.remove('active');
+      qaLink.classList.remove('active');
+      calculatorLink.classList.add('active');
+    });
+
+    qaLink.addEventListener('click', function(event) {
+      homeLink.classList.remove('active');
+      calculatorLink.classList.remove('active');
+      qaLink.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
